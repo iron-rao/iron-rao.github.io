@@ -44,27 +44,6 @@
       </tags>
   </entry>
   <entry>
-    <title>RasberryPi4BTest</title>
-    <url>/2021/01/22/RasberryPi4BTest/</url>
-    <content><![CDATA[<h1 id="树莓派的简单测试"><a href="#树莓派的简单测试" class="headerlink" title="树莓派的简单测试"></a>树莓派的简单测试</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近想着怎么用树莓派和STM32做通信，尝试能不能烧写或者读取STM32的数据。就先试试树莓派的GPIO。</p>
-<h2 id="点亮个LED"><a href="#点亮个LED" class="headerlink" title="点亮个LED"></a>点亮个LED</h2><p>网上找了下树莓派的官方文档，<a href="https://www.raspberrypi.org/documentation/usage/gpio/">关于GPIO</a></p>
-<p>然后手头没有LED orz，就找了个Arduino的输入，反正有电了就会亮。</p>
-<p>Pi GND  -&gt;Arduino GND<br>Pi Pin21-&gt;Arduino 5V</p>
-<p><img src="RasberryPi4BTest.assets/20210122194619.JPG" alt="IMG_7122"></p>
-<p>官方给的介绍里写了关于树莓派的GPIO的引脚设置，用<code>pinout</code>就可以看。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ pinout</span><br><span class="line">,--------------------------------.</span><br><span class="line">| oooooooooooooooooooo J8   +======</span><br><span class="line">| 1ooooooooooooooooooo  PoE |   Net</span><br><span class="line">|  Wi                    oo +======</span><br><span class="line">|  Fi  Pi Model 4B  V1.1 oo      |</span><br><span class="line">|        ,----.               +====</span><br><span class="line">| |D|    |SoC |               |USB3</span><br><span class="line">| |S|    |    |               +====</span><br><span class="line">| |I|    `----<span class="string">&#x27;                  |</span></span><br><span class="line"><span class="string">|                   |C|       +====</span></span><br><span class="line"><span class="string">|                   |S|       |USB2</span></span><br><span class="line"><span class="string">| pwr   |HD|   |HD| |I||A|    +====</span></span><br><span class="line"><span class="string">`-| |---|MI|---|MI|----|V|-------&#x27;</span></span><br><span class="line"></span><br><span class="line">Revision           : a03111</span><br><span class="line">SoC                : BCM2711</span><br><span class="line">RAM                : 1024Mb</span><br><span class="line">Storage            : MicroSD</span><br><span class="line">USB ports          : 4 (excluding power)</span><br><span class="line">Ethernet ports     : 1</span><br><span class="line">Wi-fi              : True</span><br><span class="line">Bluetooth          : True</span><br><span class="line">Camera ports (CSI) : 1</span><br><span class="line">Display ports (DSI): 1</span><br><span class="line"></span><br><span class="line">J8:</span><br><span class="line">   3V3  (1) (2)  5V</span><br><span class="line"> GPIO2  (3) (4)  5V</span><br><span class="line"> GPIO3  (5) (6)  GND</span><br><span class="line"> GPIO4  (7) (8)  GPIO14</span><br><span class="line">   GND  (9) (10) GPIO15</span><br><span class="line">GPIO17 (11) (12) GPIO18</span><br><span class="line">GPIO27 (13) (14) GND</span><br><span class="line">GPIO22 (15) (16) GPIO23</span><br><span class="line">   3V3 (17) (18) GPIO24</span><br><span class="line">GPIO10 (19) (20) GND</span><br><span class="line"> GPIO9 (21) (22) GPIO25</span><br><span class="line">GPIO11 (23) (24) GPIO8</span><br><span class="line">   GND (25) (26) GPIO7</span><br><span class="line"> GPIO0 (27) (28) GPIO1</span><br><span class="line"> GPIO5 (29) (30) GND</span><br><span class="line"> GPIO6 (31) (32) GPIO12</span><br><span class="line">GPIO13 (33) (34) GND</span><br><span class="line">GPIO19 (35) (36) GPIO16</span><br><span class="line">GPIO26 (37) (38) GPIO20</span><br><span class="line">   GND (39) (40) GPIO21</span><br><span class="line"></span><br><span class="line">For further information, please refer to https://pinout.xyz/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>之后用python创建脚本</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO            <span class="comment">#导入树莓派提供的python模块</span></span><br><span class="line">GPIO.setmode(GPIO.BCM)        <span class="comment">#设置GPIO模式，BCM模式在所有数码派通用</span></span><br><span class="line">GPIO.setup(<span class="number">21</span>, GPIO.OUT)       <span class="comment">#设置GPIO21为电流输出</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p> 然后run一下，<code>python3 Raspi-LED.py</code> 就可以了。  </p>
-]]></content>
-      <categories>
-        <category>RasberryPi</category>
-      </categories>
-      <tags>
-        <tag>RasberryPi</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2021/01/20/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -77,5 +56,26 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>RasberryPi4BTest</title>
+    <url>/2021/01/22/RasberryPi4BTest/</url>
+    <content><![CDATA[<h1 id="树莓派的简单测试"><a href="#树莓派的简单测试" class="headerlink" title="树莓派的简单测试"></a>树莓派的简单测试</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近想着怎么用树莓派和STM32做通信，尝试能不能烧写或者读取STM32的数据。就先试试树莓派的GPIO。</p>
+<h2 id="点亮个LED"><a href="#点亮个LED" class="headerlink" title="点亮个LED"></a>点亮个LED</h2><p>网上找了下树莓派的官方文档，<a href="https://www.raspberrypi.org/documentation/usage/gpio/">关于GPIO</a></p>
+<p>然后手头没有LED orz，就找了个Arduino的输入，反正有电了就会亮。</p>
+<p>Pi GND  -&gt;Arduino GND<br>Pi Pin21-&gt;Arduino 5V</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122201858.JPG" alt="IMG_7122"></p>
+<p>官方给的介绍里写了关于树莓派的GPIO的引脚设置，用<code>pinout</code>就可以看。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ pinout</span><br><span class="line">,--------------------------------.</span><br><span class="line">| oooooooooooooooooooo J8   +======</span><br><span class="line">| 1ooooooooooooooooooo  PoE |   Net</span><br><span class="line">|  Wi                    oo +======</span><br><span class="line">|  Fi  Pi Model 4B  V1.1 oo      |</span><br><span class="line">|        ,----.               +====</span><br><span class="line">| |D|    |SoC |               |USB3</span><br><span class="line">| |S|    |    |               +====</span><br><span class="line">| |I|    `----<span class="string">&#x27;                  |</span></span><br><span class="line"><span class="string">|                   |C|       +====</span></span><br><span class="line"><span class="string">|                   |S|       |USB2</span></span><br><span class="line"><span class="string">| pwr   |HD|   |HD| |I||A|    +====</span></span><br><span class="line"><span class="string">`-| |---|MI|---|MI|----|V|-------&#x27;</span></span><br><span class="line"></span><br><span class="line">Revision           : a03111</span><br><span class="line">SoC                : BCM2711</span><br><span class="line">RAM                : 1024Mb</span><br><span class="line">Storage            : MicroSD</span><br><span class="line">USB ports          : 4 (excluding power)</span><br><span class="line">Ethernet ports     : 1</span><br><span class="line">Wi-fi              : True</span><br><span class="line">Bluetooth          : True</span><br><span class="line">Camera ports (CSI) : 1</span><br><span class="line">Display ports (DSI): 1</span><br><span class="line"></span><br><span class="line">J8:</span><br><span class="line">   3V3  (1) (2)  5V</span><br><span class="line"> GPIO2  (3) (4)  5V</span><br><span class="line"> GPIO3  (5) (6)  GND</span><br><span class="line"> GPIO4  (7) (8)  GPIO14</span><br><span class="line">   GND  (9) (10) GPIO15</span><br><span class="line">GPIO17 (11) (12) GPIO18</span><br><span class="line">GPIO27 (13) (14) GND</span><br><span class="line">GPIO22 (15) (16) GPIO23</span><br><span class="line">   3V3 (17) (18) GPIO24</span><br><span class="line">GPIO10 (19) (20) GND</span><br><span class="line"> GPIO9 (21) (22) GPIO25</span><br><span class="line">GPIO11 (23) (24) GPIO8</span><br><span class="line">   GND (25) (26) GPIO7</span><br><span class="line"> GPIO0 (27) (28) GPIO1</span><br><span class="line"> GPIO5 (29) (30) GND</span><br><span class="line"> GPIO6 (31) (32) GPIO12</span><br><span class="line">GPIO13 (33) (34) GND</span><br><span class="line">GPIO19 (35) (36) GPIO16</span><br><span class="line">GPIO26 (37) (38) GPIO20</span><br><span class="line">   GND (39) (40) GPIO21</span><br><span class="line"></span><br><span class="line">For further information, please refer to https://pinout.xyz/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>之后用python创建脚本</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO            <span class="comment">#导入树莓派提供的python模块</span></span><br><span class="line">GPIO.setmode(GPIO.BCM)        <span class="comment">#设置GPIO模式，BCM模式在所有数码派通用</span></span><br><span class="line">GPIO.setup(<span class="number">21</span>, GPIO.OUT)       <span class="comment">#设置GPIO21为电流输出</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 然后run一下，<code>python3 Raspi-LED.py</code> 就可以了。  </p>
+]]></content>
+      <categories>
+        <category>RasberryPi</category>
+      </categories>
+      <tags>
+        <tag>RasberryPi</tag>
+      </tags>
   </entry>
 </search>

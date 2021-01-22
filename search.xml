@@ -44,20 +44,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/01/20/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>RasberryPi4BTest</title>
     <url>/2021/01/22/RasberryPi4BTest/</url>
     <content><![CDATA[<h1 id="树莓派的简单测试"><a href="#树莓派的简单测试" class="headerlink" title="树莓派的简单测试"></a>树莓派的简单测试</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近想着怎么用树莓派和STM32做通信，尝试能不能烧写或者读取STM32的数据。就先试试树莓派的GPIO。</p>
@@ -76,6 +62,51 @@
       </categories>
       <tags>
         <tag>RasberryPi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/01/20/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>图床配置(picGo+Typora+AliyunOSS)</title>
+    <url>/2021/01/22/%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AEpicGo-Typora-AliyunOSS/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要折腾这个是因为在github上部署图片会导致文件内容过多然后更新部署的太慢了。<br>所以采用了图片和文档分离的做法。</p>
+<h2 id="picGo-Gitee"><a href="#picGo-Gitee" class="headerlink" title="picGo + Gitee"></a>picGo + Gitee</h2><p>这个主要是参考的知乎上<a href="https://zhuanlan.zhihu.com/p/344257987">Typora 配置PicGo使用Gitee图床创作设置</a>， 然后确实在最后的时候是可以通过Typroa的上传测试，但是在图片上云之后不知道为什么就显示不出来。<br>而且把链接输进浏览器里也是可以使用的。<br>emmm<br>然后看CSDN上<a href="https://www.cnblogs.com/AhuntSun-blog/p/12675620.html">使用Gitee搭建个人图床</a>说可以用Gitee的page来访问，试了一下，确实是可以的。<br>但是！！<br>==每次部署之后，都相当于永远定格在了部署那一刻的仓库状态；如果仓库发生变化，比如添加文件，或删除文件，部署出来的内容都不会改变。相当于部署的时候，服务器将当前状态的仓库复制了一份，只要不更新部署，部署的内容就不会改变。所以每次更新仓库内容后，要同步更新部署==</p>
+<p>引CSDN的一张图</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122204906.png" alt="4"></p>
+<p>合着这不是还要再来一个网站框架？？？</p>
+<p>好叭本着坚持不懈的精神我在网上找了“自动部署Gitee Page”的方法。找到了是找到了，但是要么是用python自动登录爬取（来自<a href="https://blog.csdn.net/HYDCS/article/details/107464930">CSDN</a>），要么又是个Hexo。</p>
+<p>嗯，转战下个</p>
+<h2 id="picGo-OSS"><a href="#picGo-OSS" class="headerlink" title="picGo + OSS"></a>picGo + OSS</h2><p>这个直接参考了这个大哥的<a href="https://zhuanlan.zhihu.com/p/104152479">阿里云OSS PicGo 配置图床教程 超详细</a>。</p>
+<p>很顺利，然后来到了最后一步。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205649.png" alt="QQ截图20210122205548"></p>
+<p>我：？？？</p>
+<p>回去查了半天不知道发生了什么。</p>
+<p>后来在</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205734.png" alt="QQ截图20210122205730"></p>
+<p><em>PicGo设置-&gt;打开配置文件</em> 找到了问题。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205933.png" alt="A31CD1FE0DC41671588BC88552915D94"></p>
+<p>多了个空格……这谁看的出来啊。只有在配置文件里才明显一点。</p>
+<p>行吧可能是我眼睛不好。</p>
+<p>嗯，然后就可以成功了。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205958.png" alt="QQ截图20210122205609"></p>
+]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>web</tag>
       </tags>
   </entry>
 </search>

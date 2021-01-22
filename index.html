@@ -120,17 +120,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">2</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">1</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">2</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">3</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">4</span></a>
 
   </li>
   </ul>
@@ -157,6 +157,93 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://ironrao.xyz/2021/01/22/%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AEpicGo-Typora-AliyunOSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/nanotechnology.svg">
+      <meta itemprop="name" content="IronRao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IronRao's House">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/22/%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AEpicGo-Typora-AliyunOSS/" class="post-title-link" itemprop="url">图床配置(picGo+Typora+AliyunOSS)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-22 20:25:54 / Modified: 21:00:29" itemprop="dateCreated datePublished" datetime="2021-01-22T20:25:54+08:00">2021-01-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要折腾这个是因为在github上部署图片会导致文件内容过多然后更新部署的太慢了。<br>所以采用了图片和文档分离的做法。</p>
+<h2 id="picGo-Gitee"><a href="#picGo-Gitee" class="headerlink" title="picGo + Gitee"></a>picGo + Gitee</h2><p>这个主要是参考的知乎上<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/344257987">Typora 配置PicGo使用Gitee图床创作设置</a>， 然后确实在最后的时候是可以通过Typroa的上传测试，但是在图片上云之后不知道为什么就显示不出来。<br>而且把链接输进浏览器里也是可以使用的。<br>emmm<br>然后看CSDN上<a target="_blank" rel="noopener" href="https://www.cnblogs.com/AhuntSun-blog/p/12675620.html">使用Gitee搭建个人图床</a>说可以用Gitee的page来访问，试了一下，确实是可以的。<br>但是！！<br>==每次部署之后，都相当于永远定格在了部署那一刻的仓库状态；如果仓库发生变化，比如添加文件，或删除文件，部署出来的内容都不会改变。相当于部署的时候，服务器将当前状态的仓库复制了一份，只要不更新部署，部署的内容就不会改变。所以每次更新仓库内容后，要同步更新部署==</p>
+<p>引CSDN的一张图</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122204906.png" alt="4"></p>
+<p>合着这不是还要再来一个网站框架？？？</p>
+<p>好叭本着坚持不懈的精神我在网上找了“自动部署Gitee Page”的方法。找到了是找到了，但是要么是用python自动登录爬取（来自<a target="_blank" rel="noopener" href="https://blog.csdn.net/HYDCS/article/details/107464930">CSDN</a>），要么又是个Hexo。</p>
+<p>嗯，转战下个</p>
+<h2 id="picGo-OSS"><a href="#picGo-OSS" class="headerlink" title="picGo + OSS"></a>picGo + OSS</h2><p>这个直接参考了这个大哥的<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/104152479">阿里云OSS PicGo 配置图床教程 超详细</a>。</p>
+<p>很顺利，然后来到了最后一步。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205649.png" alt="QQ截图20210122205548"></p>
+<p>我：？？？</p>
+<p>回去查了半天不知道发生了什么。</p>
+<p>后来在</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205734.png" alt="QQ截图20210122205730"></p>
+<p><em>PicGo设置-&gt;打开配置文件</em> 找到了问题。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205933.png" alt="A31CD1FE0DC41671588BC88552915D94"></p>
+<p>多了个空格……这谁看的出来啊。只有在配置文件里才明显一点。</p>
+<p>行吧可能是我眼睛不好。</p>
+<p>嗯，然后就可以成功了。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205958.png" alt="QQ截图20210122205609"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -474,16 +561,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -528,7 +615,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">5k</span>
+    <span title="Symbols count total">6k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

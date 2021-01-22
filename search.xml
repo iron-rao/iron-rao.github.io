@@ -8,6 +8,7 @@
 <p>还有字数统计什么的常用工具，也可以放照片，太心动了，明天就换它看看。</p>
 <hr>
 <p>然后在晚上看了看这个界面，emmm，大红大紫的感觉不好看orz。<br>去github上找了，archer&amp;ayer&amp;catus。试了试这三个。感觉都不是自己想要的。但是我还觉得catus的风格还挺好的，就是不知道为什么在编译的时候报错了，也不知道报错怎么解决。（还截了个屏，之后放上去）。在baidu bug的时候正好遇到了这个<a href="https://www.jianshu.com/p/9f0e90cc32c2">网站</a>。<br>里面啥都有，教我怎么配置Next。还有<a href="https://io-oi.me/tech/hexo-next-optimization/">这个</a>。<br>于是乎换回了Next的theme之后再瞅瞅。</p>
+<p>然后之后找到github上的Hexo Themes的list <a href="https://github.com/hexojs/hexo/wiki/Themes">Hexo Themes</a></p>
 <p>有件很有意思的bug是啊，就是在_config.yml里第一段Site中的laguage写了en&amp;cn, 然后网页在远端的格式就崩了，在本地还是好好的orz。调回en就好了。</p>
 <p>而且在root/scaffolds的post.md文件里可以定义每次的模版，下次就不用一直写了。hexo new post name是新发布一个，就和发布说说一样。hexo new draft name就是新建个草稿，不会发出去的。</p>
 <hr>

@@ -3,7 +3,10 @@
   <entry>
     <title>Hexo建站测试-从树莓派到Windows</title>
     <url>/2021/01/21/FirstTest/</url>
-    <content><![CDATA[<h2 id="树莓派上环境搭建"><a href="#树莓派上环境搭建" class="headerlink" title="树莓派上环境搭建"></a>树莓派上环境搭建</h2><p>这边来记录一下从零开始的搭建过程<br>主要的还是基于github的github.io<br>对于会的人来说应该很快就好了，说起来确实也就几分钟的时间在敲代码上，但是花了蛮久时间研究问题的。<br>主要的步骤是这样的，先在树莓派上搭建了Node.js+Hexo的框架，然后在去找了个域名，也就是ironrao.xyz。<br>emmm说起来好像我的github的usr name还是iron-rao，不知道能不能改掉。这个”-“好麻烦。之后再看。<br>然后现在基本的框架搭好了，但是插件还没装。之后几天再研究一下。</p>
+    <content><![CDATA[<p>Hexo建站测试，一开始选择的是树莓派，但是经过一番折腾还是选择了在Windows上调试然后经过Github的自带的github.io去做。</p>
+<a id="more"></a>
+
+<h2 id="树莓派上环境搭建"><a href="#树莓派上环境搭建" class="headerlink" title="树莓派上环境搭建"></a>树莓派上环境搭建</h2><p>这边来记录一下从零开始的搭建过程<br>主要的还是基于github的github.io<br>对于会的人来说应该很快就好了，说起来确实也就几分钟的时间在敲代码上，但是花了蛮久时间研究问题的。<br>主要的步骤是这样的，先在树莓派上搭建了Node.js+Hexo的框架，然后在去找了个域名，也就是ironrao.xyz。<br>emmm说起来好像我的github的usr name还是iron-rao，不知道能不能改掉。这个”-“好麻烦。之后再看。<br>然后现在基本的框架搭好了，但是插件还没装。之后几天再研究一下。</p>
 <p>这里有个网页，之后还有好多东西要参考一下：<br>源自知乎<br><a href="https://zhuanlan.zhihu.com/p/35668237">https://zhuanlan.zhihu.com/p/35668237</a><br>orz 看了一下这个确实好厉害，这个整个的主题就和这种原来的Next的主题不一样，太厉害了orz。<br>有评论区，有目录，有水印，还有网易云的BGM。</p>
 <p>还有字数统计什么的常用工具，也可以放照片，太心动了，明天就换它看看。</p>
 <hr>
@@ -45,43 +48,8 @@
       </tags>
   </entry>
   <entry>
-    <title>RasberryPi4BTest</title>
-    <url>/2021/01/22/RasberryPi4BTest/</url>
-    <content><![CDATA[<h1 id="树莓派的简单测试"><a href="#树莓派的简单测试" class="headerlink" title="树莓派的简单测试"></a>树莓派的简单测试</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近想着怎么用树莓派和STM32做通信，尝试能不能烧写或者读取STM32的数据。就先试试树莓派的GPIO。</p>
-<h2 id="点亮个LED"><a href="#点亮个LED" class="headerlink" title="点亮个LED"></a>点亮个LED</h2><p>网上找了下树莓派的官方文档，<a href="https://www.raspberrypi.org/documentation/usage/gpio/">关于GPIO</a></p>
-<p>然后手头没有LED orz，就找了个Arduino的输入，反正有电了就会亮。</p>
-<p>Pi GND  -&gt;Arduino GND<br>Pi Pin21-&gt;Arduino 5V</p>
-<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122201858.JPG" alt="IMG_7122"></p>
-<p>官方给的介绍里写了关于树莓派的GPIO的引脚设置，用<code>pinout</code>就可以看。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ pinout</span><br><span class="line">,--------------------------------.</span><br><span class="line">| oooooooooooooooooooo J8   +======</span><br><span class="line">| 1ooooooooooooooooooo  PoE |   Net</span><br><span class="line">|  Wi                    oo +======</span><br><span class="line">|  Fi  Pi Model 4B  V1.1 oo      |</span><br><span class="line">|        ,----.               +====</span><br><span class="line">| |D|    |SoC |               |USB3</span><br><span class="line">| |S|    |    |               +====</span><br><span class="line">| |I|    `----<span class="string">&#x27;                  |</span></span><br><span class="line"><span class="string">|                   |C|       +====</span></span><br><span class="line"><span class="string">|                   |S|       |USB2</span></span><br><span class="line"><span class="string">| pwr   |HD|   |HD| |I||A|    +====</span></span><br><span class="line"><span class="string">`-| |---|MI|---|MI|----|V|-------&#x27;</span></span><br><span class="line"></span><br><span class="line">Revision           : a03111</span><br><span class="line">SoC                : BCM2711</span><br><span class="line">RAM                : 1024Mb</span><br><span class="line">Storage            : MicroSD</span><br><span class="line">USB ports          : 4 (excluding power)</span><br><span class="line">Ethernet ports     : 1</span><br><span class="line">Wi-fi              : True</span><br><span class="line">Bluetooth          : True</span><br><span class="line">Camera ports (CSI) : 1</span><br><span class="line">Display ports (DSI): 1</span><br><span class="line"></span><br><span class="line">J8:</span><br><span class="line">   3V3  (1) (2)  5V</span><br><span class="line"> GPIO2  (3) (4)  5V</span><br><span class="line"> GPIO3  (5) (6)  GND</span><br><span class="line"> GPIO4  (7) (8)  GPIO14</span><br><span class="line">   GND  (9) (10) GPIO15</span><br><span class="line">GPIO17 (11) (12) GPIO18</span><br><span class="line">GPIO27 (13) (14) GND</span><br><span class="line">GPIO22 (15) (16) GPIO23</span><br><span class="line">   3V3 (17) (18) GPIO24</span><br><span class="line">GPIO10 (19) (20) GND</span><br><span class="line"> GPIO9 (21) (22) GPIO25</span><br><span class="line">GPIO11 (23) (24) GPIO8</span><br><span class="line">   GND (25) (26) GPIO7</span><br><span class="line"> GPIO0 (27) (28) GPIO1</span><br><span class="line"> GPIO5 (29) (30) GND</span><br><span class="line"> GPIO6 (31) (32) GPIO12</span><br><span class="line">GPIO13 (33) (34) GND</span><br><span class="line">GPIO19 (35) (36) GPIO16</span><br><span class="line">GPIO26 (37) (38) GPIO20</span><br><span class="line">   GND (39) (40) GPIO21</span><br><span class="line"></span><br><span class="line">For further information, please refer to https://pinout.xyz/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>之后用python创建脚本</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO            <span class="comment">#导入树莓派提供的python模块</span></span><br><span class="line">GPIO.setmode(GPIO.BCM)        <span class="comment">#设置GPIO模式，BCM模式在所有数码派通用</span></span><br><span class="line">GPIO.setup(<span class="number">21</span>, GPIO.OUT)       <span class="comment">#设置GPIO21为电流输出</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p> 然后run一下，<code>python3 Raspi-LED.py</code> 就可以了。  </p>
-]]></content>
-      <categories>
-        <category>RasberryPi</category>
-      </categories>
-      <tags>
-        <tag>RasberryPi</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/01/20/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>图床配置(picGo+Typora+AliyunOSS)</title>
-    <url>/2021/01/22/%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AEpicGo-Typora-AliyunOSS/</url>
+    <url>/2021/01/22/PicGo-Typora-AliyunOSS/</url>
     <content><![CDATA[<p>主要折腾这个是因为在github上部署图片会导致文件内容过多然后更新部署的太慢了。<br>所以采用了图片和文档分离的做法。</p>
 <p>先用了picGo + gitee 然后发现有问题，而且一点也不方便。后来就用了OSS。</p>
 <a id="more"></a>
@@ -106,12 +74,58 @@
 <p>行吧可能是我眼睛不好。</p>
 <p>嗯，然后就可以成功了。</p>
 <p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205958.png" alt="QQ截图20210122205609"></p>
+<hr>
+<h2 id="New-bug"><a href="#New-bug" class="headerlink" title="New bug:"></a>New bug:</h2><h3 id="Typora配置PicGo提示failed-to-fetch"><a href="#Typora配置PicGo提示failed-to-fetch" class="headerlink" title="Typora配置PicGo提示failed to fetch"></a>Typora配置PicGo提示failed to fetch</h3><p>之后的使用中，有遇到一个问题。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175337.png" alt="QQ截图20210124174827"></p>
+<p>但是实际上PicGo单独上传的时候是可以用的。</p>
+<p>测试的时候它报错了，查了半天的bug，后来发现错误是由 <strong>PicGo设置-&gt;设置Server</strong> 造成的。</p>
+<p>因为将PicGo server 的端口h不是Typora 监听的端口。Typroa的监听端口是36677.</p>
+<p>之前是这样的设置</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175338.png" alt="QQ截图20210124175118"></p>
+<p>后来改成</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175158.png" alt="QQ截图20210124175153"></p>
+<p>就可以了。</p>
 ]]></content>
       <categories>
         <category>web</category>
       </categories>
       <tags>
         <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/01/20/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>RasberryPi4BTest</title>
+    <url>/2021/01/22/RasberryPi4BTest/</url>
+    <content><![CDATA[<h1 id="树莓派的简单测试"><a href="#树莓派的简单测试" class="headerlink" title="树莓派的简单测试"></a>树莓派的简单测试</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近想着怎么用树莓派和STM32做通信，尝试能不能烧写或者读取STM32的数据。就先试试树莓派的GPIO。</p>
+<h2 id="点亮个LED"><a href="#点亮个LED" class="headerlink" title="点亮个LED"></a>点亮个LED</h2><p>网上找了下树莓派的官方文档，<a href="https://www.raspberrypi.org/documentation/usage/gpio/">关于GPIO</a></p>
+<p>然后手头没有LED orz，就找了个Arduino的输入，反正有电了就会亮。</p>
+<p>Pi GND  -&gt;Arduino GND<br>Pi Pin21-&gt;Arduino 5V</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122201858.JPG" alt="IMG_7122"></p>
+<p>官方给的介绍里写了关于树莓派的GPIO的引脚设置，用<code>pinout</code>就可以看。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ pinout</span><br><span class="line">,--------------------------------.</span><br><span class="line">| oooooooooooooooooooo J8   +======</span><br><span class="line">| 1ooooooooooooooooooo  PoE |   Net</span><br><span class="line">|  Wi                    oo +======</span><br><span class="line">|  Fi  Pi Model 4B  V1.1 oo      |</span><br><span class="line">|        ,----.               +====</span><br><span class="line">| |D|    |SoC |               |USB3</span><br><span class="line">| |S|    |    |               +====</span><br><span class="line">| |I|    `----<span class="string">&#x27;                  |</span></span><br><span class="line"><span class="string">|                   |C|       +====</span></span><br><span class="line"><span class="string">|                   |S|       |USB2</span></span><br><span class="line"><span class="string">| pwr   |HD|   |HD| |I||A|    +====</span></span><br><span class="line"><span class="string">`-| |---|MI|---|MI|----|V|-------&#x27;</span></span><br><span class="line"></span><br><span class="line">Revision           : a03111</span><br><span class="line">SoC                : BCM2711</span><br><span class="line">RAM                : 1024Mb</span><br><span class="line">Storage            : MicroSD</span><br><span class="line">USB ports          : 4 (excluding power)</span><br><span class="line">Ethernet ports     : 1</span><br><span class="line">Wi-fi              : True</span><br><span class="line">Bluetooth          : True</span><br><span class="line">Camera ports (CSI) : 1</span><br><span class="line">Display ports (DSI): 1</span><br><span class="line"></span><br><span class="line">J8:</span><br><span class="line">   3V3  (1) (2)  5V</span><br><span class="line"> GPIO2  (3) (4)  5V</span><br><span class="line"> GPIO3  (5) (6)  GND</span><br><span class="line"> GPIO4  (7) (8)  GPIO14</span><br><span class="line">   GND  (9) (10) GPIO15</span><br><span class="line">GPIO17 (11) (12) GPIO18</span><br><span class="line">GPIO27 (13) (14) GND</span><br><span class="line">GPIO22 (15) (16) GPIO23</span><br><span class="line">   3V3 (17) (18) GPIO24</span><br><span class="line">GPIO10 (19) (20) GND</span><br><span class="line"> GPIO9 (21) (22) GPIO25</span><br><span class="line">GPIO11 (23) (24) GPIO8</span><br><span class="line">   GND (25) (26) GPIO7</span><br><span class="line"> GPIO0 (27) (28) GPIO1</span><br><span class="line"> GPIO5 (29) (30) GND</span><br><span class="line"> GPIO6 (31) (32) GPIO12</span><br><span class="line">GPIO13 (33) (34) GND</span><br><span class="line">GPIO19 (35) (36) GPIO16</span><br><span class="line">GPIO26 (37) (38) GPIO20</span><br><span class="line">   GND (39) (40) GPIO21</span><br><span class="line"></span><br><span class="line">For further information, please refer to https://pinout.xyz/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>之后用python创建脚本</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO            <span class="comment">#导入树莓派提供的python模块</span></span><br><span class="line">GPIO.setmode(GPIO.BCM)        <span class="comment">#设置GPIO模式，BCM模式在所有数码派通用</span></span><br><span class="line">GPIO.setup(<span class="number">21</span>, GPIO.OUT)       <span class="comment">#设置GPIO21为电流输出</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 然后run一下，<code>python3 Raspi-LED.py</code> 就可以了。  </p>
+]]></content>
+      <categories>
+        <category>RasberryPi</category>
+      </categories>
+      <tags>
+        <tag>RasberryPi</tag>
       </tags>
   </entry>
 </search>
